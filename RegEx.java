@@ -22,7 +22,7 @@ public class RegEx {
 	}
 	public static boolean isValidPassword(String pass) {
 
-		String regex = "^[a-zA-Z0-9]{8,}$";
+		String regex = "^(?=.*[A-Z])[a-zA-Z0-9].{8,}$";
 		Pattern p = Pattern.compile(regex);
 		Matcher m = p.matcher(pass);
 		return m.matches();
