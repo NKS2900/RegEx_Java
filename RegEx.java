@@ -10,21 +10,21 @@ public class RegEx {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		do {
-			System.out.println("Enter E-mail : ");
-			String email = scan.nextLine();
-			boolean b = isValid(email);
-			if (b)
-				System.out.println(email + " -->is_Vlaid_Email...");
-			else
-				System.out.println("Invalid_Email.???");
-		} while (true);
+		
+		System.out.println("Enter Mobile_no : ");
+		String mobile = scan.nextLine();
+
+		boolean b = isValidPassword(mobile);
+		if (b)
+			System.out.println(mobile+" ->is Valid mobile no!!!");
+		else
+			System.out.println("Invalid_mobile???");
 	}
-	
-	public static boolean isValid(String email) {
-		String regex = "^[a-zA-Z0-9]+[.(a-zA-Z0-9)]*(\\@)[a-zA-Z0-9]+(\\.)[a-z]{2,4}$";
+	public static boolean isValidPassword(String mobile) {
+
+		String regex = "^(91){1}[ ]+[0-9]{10}$";
 		Pattern p = Pattern.compile(regex);
-		Matcher m = p.matcher(email);
+		Matcher m = p.matcher(mobile);
 		return m.matches();
 	}
 }
