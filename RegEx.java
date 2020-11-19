@@ -10,20 +10,20 @@ public class RegExLastName {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Enter First_Name : ");
-		String fname = scan.nextLine();
+		System.out.println("Enter Last_Name : ");
+		String lname = scan.nextLine();
 
-		boolean b = isValidPassword(fname);
+		boolean b = isValidPassword(lname);
 		if (b)
-			System.out.println("Valid_name !!!");
+			System.out.println("Strong_Password!!!");
 		else
-			System.out.println("Invalid_name???");
+			System.out.println("Invalid_Password???");
 	}
-	public static boolean isValidPassword(String fname) {
+	public static boolean isValidPassword(String lname) {
 
 		String regex = "^([A-Z]{1})+[a-zA-z0-9]{2,}$";
 		Pattern p = Pattern.compile(regex);
-		Matcher m = p.matcher(fname);
+		Matcher m = p.matcher(lname);
 		return m.matches();
 	}
 }
