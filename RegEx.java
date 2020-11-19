@@ -11,20 +11,20 @@ public class RegEx {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		System.out.println("Enter Mobile_no : ");
-		String mobile = scan.nextLine();
+		System.out.println("Enter Password : ");
+		String pass = scan.nextLine();
 
-		boolean b = isValidPassword(mobile);
+		boolean b = isValidPassword(pass);
 		if (b)
-			System.out.println(mobile+" ->is Valid mobile no!!!");
+			System.out.println(pass+" ->is Strong password!!!");
 		else
-			System.out.println("Invalid_mobile???");
+			System.out.println("Invalid_Password???");
 	}
-	public static boolean isValidPassword(String mobile) {
+	public static boolean isValidPassword(String pass) {
 
-		String regex = "^(91){1}[ ]+[0-9]{10}$";
+		String regex = "^[a-zA-Z0-9]{8,}$";
 		Pattern p = Pattern.compile(regex);
-		Matcher m = p.matcher(mobile);
+		Matcher m = p.matcher(pass);
 		return m.matches();
 	}
 }
